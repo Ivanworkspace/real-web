@@ -25,11 +25,17 @@ export function PortfolioPreview() {
               className="group relative overflow-hidden rounded-xl shadow-lg"
             >
               <Link to={`/projects/${project.id}`}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
+                <div className="relative w-full h-64">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      console.error(`Error loading image: ${project.image}`);
+                      e.currentTarget.src = '/images/placeholder.png'; // Immagine di fallback
+                    }}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-0 p-6">
                     <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
