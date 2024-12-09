@@ -26,13 +26,20 @@ export function PortfolioPreview() {
             >
               <Link to={`/projects/${project.id}`}>
                 <div className="relative w-full h-64">
+                  <div className="absolute top-0 left-0 bg-black bg-opacity-50 text-white p-2 z-10">
+                    Image path: {project.image}
+                  </div>
+                  
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      console.error(`Error loading image: ${project.image}`);
-                      e.currentTarget.src = '/images/placeholder.png'; // Immagine di fallback
+                      const img = e.target as HTMLImageElement;
+                      console.error(`Failed to load image: ${img.src}`);
+                      console.error(`Full URL: ${window.location.origin}${img.src}`);
+                      // Prova a ricaricare l'immagine con il percorso completo
+                      img.src = `${window.location.origin}${project.image}`;
                     }}
                   />
                 </div>
