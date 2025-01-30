@@ -46,8 +46,8 @@ export const projectsData = [
     solution: 'Grazie alla mia esperienza nel settore, ho realizzato un servizio fotografico professionale per valorizzare al meglio i gioielli, creando contenuti di alta qualità. Abbiamo sviluppato una strategia di marketing organica sui social media, puntando su storytelling visivo ed engagement per costruire una connessione autentica con il pubblico.',
     result: 'Abbiamo aumentato la brand awareness e fidelizzato i clienti attraverso contenuti curati e una community coinvolta, consolidando la presenza del brand nel settore del lusso.',
     gallery: [
-      '/images/modella1.jpg',
-      '/images/modella2.jpg'
+      '/images/modella-1.jpg',
+      '/images/modella-2.jpg'
     ]
   },
   {
