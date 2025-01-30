@@ -54,7 +54,7 @@ export const projectsData = [
     id: 4,
     title: 'Portfolio Valentina Dell\'Aquila',
     category: 'Sito Web',
-    image: '/images/valentina.png', //TODO: cambiare immagine
+    image: '/images/valentina.jpg', //TODO: cambiare immagine
     description: 'Descrizione del nuovo progetto 2.',
     technology: 'React, TailwindCSS',
     client: 'Valentina Dell\'Aquila',
