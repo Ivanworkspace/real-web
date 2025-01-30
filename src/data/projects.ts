@@ -63,8 +63,8 @@ export const projectsData = [
     solution: 'Abbiamo sviluppato un sito web moderno e minimalista, con un layout pulito che valorizza le immagini e i contenuti. Il design responsive garantisce un/ottima esperienza su tutti i dispositivi, mentre la navigazione intuitiva permette di esplorare facilmente il portfolio',
     result: 'Il sito ha rafforzato il personal branding della modella, aumentando le opportunità di collaborazione con fotografi e brand. Grazie alla struttura visiva accattivante, ha ottenuto maggiore visibilità e coinvolgimento sui social media.',
     gallery: [
-      '/images/foto-vale.png',
-      '/images/foto-vale2.png'
+      '/images/foto-vale.jpg',
+      '/images/foto-vale2.jpg'
     ]
   }
 ];
