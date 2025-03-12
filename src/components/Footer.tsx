@@ -9,9 +9,9 @@ export function Footer() {
         </p>
         <p className="text-sm mt-2">
           Follow us on 
-          <a href="https://it.linkedin.com/in/ivan-santantonio-aa7416233" className="text-indigo-400 ml-1 hover:underline">Linkedin</a>, 
+          <a href="https://it.linkedin.com/in/ivan-santantonio-aa7416233" className="text-primary-400 ml-1 hover:underline">Linkedin</a>, 
       
-          <a href="https://wa.me/393791408773'" className="text-indigo-400 ml-1 hover:underline">Whatsapp</a>.
+          <a href="https://wa.me/393791408773'" className="text-primary-400 ml-1 hover:underline">Whatsapp</a>.
         </p>
       </div>
     </footer>

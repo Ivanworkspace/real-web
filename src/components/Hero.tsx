@@ -6,7 +6,7 @@ import { Button } from './common/Button';
 export function Hero() {
   return (
     <div className="relative min-h-screen flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700 opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-accent-600 opacity-90" />
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6">

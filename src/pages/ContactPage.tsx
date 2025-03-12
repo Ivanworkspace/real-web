@@ -7,7 +7,7 @@ const socialLinks = [
   {
     name: 'Instagram',
     icon: Instagram,
-    url: 'https://www.instagram.com/santantonioivan/',
+    url: 'https://www.instagram.com/future_.craft',
     color: 'bg-gradient-to-r from-purple-500 via-pink-500 to-red-500',
     hoverEffect: 'hover:scale-105 hover:rotate-6'
   },

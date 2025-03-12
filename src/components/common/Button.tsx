@@ -18,8 +18,8 @@ export function Button({
 }: ButtonProps) {
   const baseStyles = 'px-8 py-3 rounded-full font-semibold transition-all flex items-center gap-2';
   const variants = {
-    primary: 'bg-white text-indigo-600 hover:bg-yellow-400',
-    secondary: 'border-2 border-white text-white hover:bg-white hover:text-indigo-600'
+    primary: 'bg-white text-primary-600 hover:bg-yellow-400',
+    secondary: 'border-2 border-white text-white hover:bg-white hover:text-primary-600'
   };
 
   return (

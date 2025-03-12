@@ -37,11 +37,18 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className={`text-2xl font-bold ${
-              isScrolled || location.pathname !== '/' ? 'text-indigo-600' : 'text-white'
-            }`}
+            className="flex items-center gap-2"
           >
-            RealWeb
+            <img 
+              src="/images/favicon.png" 
+              alt="Future Craft Logo" 
+              className="w-8 h-8 object-contain"
+            />
+            <span className={`text-2xl font-bold ${
+              isScrolled || location.pathname !== '/' ? 'text-primary-600' : 'text-white'
+            }`}>
+              Future Craft
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -51,7 +58,7 @@ export function Navbar() {
                 to={item.path}
                 className={`${
                   isScrolled || location.pathname !== '/' 
-                    ? `text-gray-600 ${isActive(item.path) ? 'text-indigo-600' : 'hover:text-indigo-600'}` 
+                    ? `text-gray-600 ${isActive(item.path) ? 'text-primary-600' : 'hover:text-primary-600'}` 
                     : `text-white ${isActive(item.path) ? 'text-yellow-400' : 'hover:text-yellow-400'}`
                 } transition-colors`}
               >
@@ -80,7 +87,7 @@ export function Navbar() {
                 key={item.name}
                 to={item.path}
                 className={`block px-6 py-2 ${
-                  isActive(item.path) ? 'text-indigo-600 bg-gray-50' : 'text-gray-600 hover:bg-gray-50'
+                  isActive(item.path) ? 'text-primary-600 bg-gray-50' : 'text-gray-600 hover:bg-gray-50'
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

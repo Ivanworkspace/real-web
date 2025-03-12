@@ -38,7 +38,6 @@ export const projectsData = [
     title: 'Luxury Jewel Accesories',
     category: 'Brand di Gioielli',
     image: '/images/nuovo_progetto1.jpg',
-    description: 'Descrizione del nuovo progetto 1.',
     technology: 'React, TailwindCSS',
     client: 'Chiara Martone',
     date: '2025',
@@ -55,7 +54,6 @@ export const projectsData = [
     title: 'Portfolio Valentina Dell\'Aquila',
     category: 'Sito Web',
     image: '/images/valentina.jpg', //TODO: cambiare immagine
-    description: 'Descrizione del nuovo progetto 2.',
     technology: 'React, TailwindCSS',
     client: 'Valentina Dell\'Aquila',
     date: '2025',
