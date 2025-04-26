@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft, Code, Users, Calendar } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, Code, Users, Calendar, X } from 'lucide-react';
 import { projectsData } from '../data/projects';
 
 export function ProjectDetail() {
   const { id } = useParams();
   const project = projectsData.find(p => p.id === Number(id));
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   if (!project) {
     return <div>Project not found</div>;
   }
+
+  const openModal = (imageUrl: string) => {
+    setSelectedImage(imageUrl);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <div className="pt-20">
@@ -68,7 +77,8 @@ export function ProjectDetail() {
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full rounded-lg shadow-xl"
+                className="w-full h-96 object-contain rounded-lg shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105"
+                onClick={() => openModal(project.image)}
               />
               {project.gallery?.map((image, index) => (
                 <motion.img
@@ -78,13 +88,47 @@ export function ProjectDetail() {
                   transition={{ delay: 0.2 * index }}
                   src={image}
                   alt={`${project.title} gallery ${index + 1}`}
-                  className="w-full rounded-lg shadow-xl"
+                  className="w-full h-96 object-cover rounded-lg shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105"
+                  onClick={() => openModal(image)}
                 />
               ))}
             </div>
           </motion.div>
         </div>
       </motion.article>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-full max-h-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={selectedImage} 
+                alt="Fullscreen" 
+                className="block max-w-[90vw] max-h-[90vh] object-contain" 
+              />
+              <button 
+                onClick={closeModal}
+                className="absolute top-2 right-2 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-colors"
+                aria-label="Close image"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

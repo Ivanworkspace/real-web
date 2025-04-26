@@ -21,9 +21,10 @@ const socialLinks = [
   {
     name: 'Facebook',
     icon: Facebook,
-    url: 'https://www.facebook.com/ivan.santantonio',
+    url: 'https://www.facebook.com/share/1BGLoWPcDp/',
     color: 'bg-blue-500',
-    hoverEffect: 'hover:scale-105 hover:rotate-6'
+    hoverEffect: 'hover:scale-105 hover:rotate-6',
+    ariaLabel: 'Facebook'
   },
   {
     name: 'WhatsApp',

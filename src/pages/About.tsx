@@ -21,7 +21,7 @@ export function About() {
         <div className="container mx-auto px-6">
           <SectionTitle 
             title="Chi Sono" 
-            subtitle="Innovazione e creatività al servizio del digitale"
+            subtitle="Dove la passione per il codice incontra l'arte del marketing: la storia di Future Craft"
           />
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -39,21 +39,17 @@ export function About() {
             </motion.div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-800">La Mia Storia</h3>
-              <p className="text-gray-600">
-                Ciao, sono Ivan Santantonio, un appassionato di tecnologia e marketing digitale. 
-                La mia passione per l'informatica è nata fin da giovane, spingendomi a esplorare 
-                continuamente nuove tecnologie e soluzioni innovative.
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Ciao, sono Ivan Santantonio. Il mondo digitale mi ha affascinato fin da subito. La possibilità di trasformare idee in codice funzionante e l'evoluzione costante delle tecnologie mi hanno spinto a studiare e sperimentare senza sosta. Oltre allo sviluppo, ho scoperto una forte passione per il <strong className="font-semibold">marketing digitale</strong> e la <strong className="font-semibold">creazione di contenuti</strong> che comunicano e coinvolgono. Da questo mix di competenze è nata <strong className="text-indigo-600">Future Craft</strong>.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Future Craft non è solo un nome, è una promessa: quella di <strong className="font-semibold">costruire</strong> il futuro digitale dei nostri clienti. È nata dalla convinzione che unire <strong className="font-semibold">sviluppo web all'avanguardia</strong> e <strong className="font-semibold">strategie di marketing digitale intelligenti</strong> non fosse solo possibile, ma necessario per emergere davvero.
+              </p>
+               <p className="text-gray-600 text-lg leading-relaxed">
+                Il mio approccio? Non mi accontento della sufficienza. Ogni progetto è un'opportunità per spingersi oltre, per imparare qualcosa di nuovo e per tradurre la visione del cliente in una realtà digitale tangibile e performante. Credo nella collaborazione, nella trasparenza e nei risultati misurabili.
               </p>
               
-              <h3 className="text-2xl font-bold text-gray-800">Il Mio Approccio</h3>
-              <p className="text-gray-600">
-                Credo fermamente che l'innovazione tecnologica e il marketing digitale siano 
-                strumenti fondamentali per il successo nel mondo moderno. La mia filosofia 
-                si basa sulla continua ricerca dell'eccellenza e sull'apprendimento costante.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6 mt-8">
+              <div className="grid grid-cols-2 gap-6 pt-4">
                 {stats.map((stat, index) => (
                   <motion.div 
                     key={index}
@@ -77,15 +73,15 @@ export function About() {
               {[
                 {
                   title: 'Sviluppo Web',
-                  description: 'Specializzato in tecnologie moderne come React, Next.js e sviluppo frontend avanzato.'
+                  description: 'Dalle fondamenta solide di React e Next.js alla creazione di interfacce utente fluide e responsive che catturano l\'attenzione.'
                 },
                 {
                   title: 'Marketing Digitale',
-                  description: 'Esperienza in SEO, social media marketing e strategie di crescita digitale.'
+                  description: 'Non solo codice, ma crescita. Potenziamo la tua presenza online con SEO mirata, social media strategy efficaci e campagne che convertono.'
                 },
                 {
                   title: 'Innovazione Tecnologica',
-                  description: 'Costantemente aggiornato sulle ultime tendenze e tecnologie del settore digitale.'
+                  description: 'Il mondo digitale corre veloce. Io corro con lui, sempre aggiornato sulle ultime tendenze per offrirti soluzioni all\'avanguardia.'
                 }
               ].map((expertise, index) => (
                 <motion.div
@@ -110,10 +106,10 @@ export function About() {
             transition={{ delay: 0.8 }}
             className="mt-12 text-center"
           >
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Sono sempre alla ricerca di nuove sfide e opportunità per crescere 
-              professionalmente. Se hai un progetto interessante o vuoi collaborare, 
-              non esitare a contattarmi.
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Hai un'idea che aspetta di diventare digitale? Una sfida da vincere online? Parliamone. 
+              <br className="hidden sm:block" />
+              Contattami e costruiamo insieme il tuo futuro.
             </p>
           </motion.div>
         </div>

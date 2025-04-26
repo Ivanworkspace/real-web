@@ -64,5 +64,55 @@ export const projectsData = [
       '/images/foto-vale.jpg',
       '/images/foto-vale2.jpg'
     ]
+  },
+  {
+    id: 5,
+    title: 'Gestionale Reportistica e Simulazione Vendita per Wave Events',
+    category: 'Sviluppo Software',
+    image: '/images/Wave Yellow (2).png',
+    description: 'Gestionale di reportistica e simulazione vendita per agenzia di viaggi a Malta, con tracciamento delle vendite su 4 livelli: admin, manager, team leader e promoter.',
+    technology: 'Tecnologie moderne e tools avanzati', // Placeholder - da specificare meglio se necessario
+    client: 'Wave Events (Agenzia di Viaggi, Malta)',
+    date: '2024', // Placeholder - da aggiornare se necessario
+    challenge: 'Tracciare e simulare le vendite in modo efficiente su multipli livelli gerarchici.',
+    solution: 'Abbiamo sviluppato un gestionale su misura utilizzando le migliori tecnologie per fornire report dettagliati e funzionalità di simulazione.',
+    result: 'Miglioramento del monitoraggio delle performance di vendita e ottimizzazione delle strategie commerciali.',
+    gallery: [
+      '/images/Catturaadmin.PNG',
+      '/images/Catturawave.PNG'
+    ]
+  },
+  {
+    id: 6,
+    title: 'Landing Page Pacchetti Viaggio per Bonaevents',
+    category: 'Web Design',
+    image: '/images/logo.PNG',
+    description: 'Landing page per Bonaevents, agenzia di eventi e viaggi albanese, per la presentazione e visualizzazione dei pacchetti viaggio.',
+    technology: 'React, TailwindCSS', // Assumendo tecnologie simili agli altri progetti web
+    client: 'Bonaevents (Agenzia Eventi/Viaggi, Albania)',
+    date: '2024', // Placeholder - da aggiornare se necessario
+    challenge: 'Creare una pagina web accattivante per presentare i pacchetti viaggio e attirare clienti.',
+    solution: 'Abbiamo realizzato una landing page moderna e intuitiva, focalizzata sulla presentazione chiara dei pacchetti e sulla facilità di contatto.',
+    result: 'Aumento delle richieste di informazioni e prenotazioni dei pacchetti viaggio.',
+    gallery: [
+      '/images/Cattura_pack.PNG',
+      '/images/Catturapack1.PNG'
+    ]
+  },
+  {
+    id: 7,
+    title: 'Logo Design per Studio Legale GD & Partners',
+    category: 'Logo Design / Branding',
+    image: '/images/gd.png',
+    description: 'Creazione di un logo distintivo per lo studio legale GD & Partners, progettato per essere applicato su accessori e all\'interno della struttura.',
+    technology: 'Graphic Design Software', // Placeholder
+    client: 'Studio Legale GD & Partners',
+    date: '2024', // Placeholder - da aggiornare se necessario
+    challenge: 'Sviluppare un logo professionale e versatile che rappresentasse lo studio legale.',
+    solution: 'Abbiamo disegnato un logo moderno e pulito, adatto a diverse applicazioni, dagli accessori all\'immagine coordinata dello studio.',
+    result: 'Rafforzamento dell\'identità visiva dello studio legale e miglioramento della riconoscibilità del brand.',
+    gallery: [
+      '/images/catturagd.PNG' // Come richiesto, solo un'altra immagine oltre alla preview
+    ]
   }
 ];
