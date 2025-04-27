@@ -24,7 +24,7 @@ export function About() {
             subtitle="Dove la passione per il codice incontra l'arte del marketing: la storia di Future Craft"
           />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -32,7 +32,7 @@ export function About() {
               className="max-w-2xl mx-auto lg:max-w-none"
             >
               <img 
-                src="https://media.licdn.com/dms/image/v2/D4D03AQEXDlg6yX-fmQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1715681926300?e=2147483647&v=beta&t=CQsGxPvYs75vdhRYPFkeIa30ZvEu3kxwxA9NaZc7qdo" 
+                src="/images/fotoivan.jpeg"
                 alt="Ivan Santantonio"
                 className="w-full h-[500px] object-cover rounded-lg shadow-xl"
               />
