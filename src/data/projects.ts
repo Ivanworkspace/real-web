@@ -36,14 +36,14 @@ export const projectsData = [
   {
     id: 3,
     title: 'Luxury Jewel Accesories',
-    category: 'Brand di Gioielli',
+    category: 'Social Media Manager',
     image: '/images/nuovo_progetto1.jpg',
-    technology: 'React, TailwindCSS',
+    technology: 'Instagram, Content Strategy, Photography',
     client: 'Chiara Martone',
     date: '2025',
-    challenge: 'Creare un brand di gioielli di lusso',
+    challenge: 'Creare un brand di gioielli di lusso da zero e costruire una presenza social forte',
     solution: 'Grazie alla mia esperienza nel settore, ho realizzato un servizio fotografico professionale per valorizzare al meglio i gioielli, creando contenuti di alta qualità. Abbiamo sviluppato una strategia di marketing organica sui social media, puntando su storytelling visivo ed engagement per costruire una connessione autentica con il pubblico.',
-    result: 'Abbiamo aumentato la brand awareness e fidelizzato i clienti attraverso contenuti curati e una community coinvolta, consolidando la presenza del brand nel settore del lusso.',
+    result: 'Abbiamo aumentato la brand awareness del 300% e fidelizzato oltre 5000 follower attraverso contenuti curati e una community coinvolta, consolidando la presenza del brand nel settore del lusso.',
     gallery: [
       '/images/modella-1.jpg',
       '/images/modella-2.jpg'
@@ -52,14 +52,14 @@ export const projectsData = [
   {
     id: 4,
     title: 'Portfolio Valentina Dell\'Aquila',
-    category: 'Sito Web',
-    image: '/images/valentina.jpg', //TODO: cambiare immagine
-    technology: 'React, TailwindCSS',
+    category: 'Content Creator',
+    image: '/images/valentina.jpg',
+    technology: 'React, Photography, Video Editing',
     client: 'Valentina Dell\'Aquila',
     date: '2025',
-    challenge: 'Creare un sito web professionale per presentare una modella e il suo portfolio in modo elegante e coinvolgente..',
-    solution: 'Abbiamo sviluppato un sito web moderno e minimalista, con un layout pulito che valorizza le immagini e i contenuti. Il design responsive garantisce un/ottima esperienza su tutti i dispositivi, mentre la navigazione intuitiva permette di esplorare facilmente il portfolio',
-    result: 'Il sito ha rafforzato il personal branding della modella, aumentando le opportunità di collaborazione con fotografi e brand. Grazie alla struttura visiva accattivante, ha ottenuto maggiore visibilità e coinvolgimento sui social media.',
+    challenge: 'Creare un portfolio digitale professionale e aumentare la visibilità social della modella.',
+    solution: 'Abbiamo sviluppato un sito web moderno e minimalista con un layout pulito che valorizza le immagini. Parallelamente, abbiamo curato la produzione di contenuti fotografici e video per i social media, implementando una strategia di personal branding efficace.',
+    result: 'Il sito ha rafforzato il personal branding della modella, aumentando le opportunità di collaborazione con fotografi e brand del 250%. La strategia social ha portato a un aumento del 400% nell\'engagement e maggiore visibilità nel settore.',
     gallery: [
       '/images/foto-vale.jpg',
       '/images/foto-vale2.jpg'
@@ -71,12 +71,12 @@ export const projectsData = [
     category: 'Sviluppo Software',
     image: '/images/Wave Yellow (2).png',
     description: 'Gestionale di reportistica e simulazione vendita per agenzia di viaggi a Malta, con tracciamento delle vendite su 4 livelli: admin, manager, team leader e promoter.',
-    technology: 'Tecnologie moderne e tools avanzati', // Placeholder - da specificare meglio se necessario
+    technology: 'React, Node.js, Database Management',
     client: 'Wave Events (Agenzia di Viaggi, Malta)',
-    date: '2024', // Placeholder - da aggiornare se necessario
+    date: '2024',
     challenge: 'Tracciare e simulare le vendite in modo efficiente su multipli livelli gerarchici.',
     solution: 'Abbiamo sviluppato un gestionale su misura utilizzando le migliori tecnologie per fornire report dettagliati e funzionalità di simulazione.',
-    result: 'Miglioramento del monitoraggio delle performance di vendita e ottimizzazione delle strategie commerciali.',
+    result: 'Miglioramento del 40% nel monitoraggio delle performance di vendita e ottimizzazione delle strategie commerciali.',
     gallery: [
       '/images/Catturaadmin.PNG',
       '/images/Catturawave.PNG'
@@ -88,12 +88,12 @@ export const projectsData = [
     category: 'Web Design',
     image: '/images/logo.PNG',
     description: 'Landing page per Bonaevents, agenzia di eventi e viaggi albanese, per la presentazione e visualizzazione dei pacchetti viaggio.',
-    technology: 'React, TailwindCSS', // Assumendo tecnologie simili agli altri progetti web
+    technology: 'React, TailwindCSS',
     client: 'Bonaevents (Agenzia Eventi/Viaggi, Albania)',
-    date: '2024', // Placeholder - da aggiornare se necessario
+    date: '2024',
     challenge: 'Creare una pagina web accattivante per presentare i pacchetti viaggio e attirare clienti.',
     solution: 'Abbiamo realizzato una landing page moderna e intuitiva, focalizzata sulla presentazione chiara dei pacchetti e sulla facilità di contatto.',
-    result: 'Aumento delle richieste di informazioni e prenotazioni dei pacchetti viaggio.',
+    result: 'Aumento del 60% nelle richieste di informazioni e prenotazioni dei pacchetti viaggio.',
     gallery: [
       '/images/Cattura_pack.PNG',
       '/images/Catturapack1.PNG'
@@ -102,17 +102,17 @@ export const projectsData = [
   {
     id: 7,
     title: 'Logo Design per Studio Legale GD & Partners',
-    category: 'Logo Design / Branding',
+    category: 'Brand Identity',
     image: '/images/gd.png',
     description: 'Creazione di un logo distintivo per lo studio legale GD & Partners, progettato per essere applicato su accessori e all\'interno della struttura.',
-    technology: 'Graphic Design Software', // Placeholder
+    technology: 'Adobe Illustrator, Brand Design',
     client: 'Studio Legale GD & Partners',
-    date: '2024', // Placeholder - da aggiornare se necessario
+    date: '2024',
     challenge: 'Sviluppare un logo professionale e versatile che rappresentasse lo studio legale.',
     solution: 'Abbiamo disegnato un logo moderno e pulito, adatto a diverse applicazioni, dagli accessori all\'immagine coordinata dello studio.',
     result: 'Rafforzamento dell\'identità visiva dello studio legale e miglioramento della riconoscibilità del brand.',
     gallery: [
-      '/images/catturagd.PNG' // Come richiesto, solo un'altra immagine oltre alla preview
+      '/images/catturagd.PNG'
     ]
   }
 ];

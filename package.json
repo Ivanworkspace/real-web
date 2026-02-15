@@ -1,8 +1,10 @@
 {
-  "name": "real-web",
+  "name": "futurecraft",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^9.100.0",
+    "@react-three/fiber": "^8.15.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,12 +12,14 @@
     "@types/node": "^16.18.68",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "framer-motion": "^10.16.16",
+    "@types/three": "^0.161.0",
+    "framer-motion": "^10.18.0",
     "lucide-react": "^0.294.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
+    "three": "^0.161.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },

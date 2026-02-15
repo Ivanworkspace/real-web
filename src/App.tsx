@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar } from './components/Navbar';
+import { NavbarNew } from './components/NavbarNew';
 import { HomePage } from './pages/HomePage';
-import { ProjectsPage } from './pages/ProjectsPage';
-import { ProjectDetail } from './pages/ProjectDetail';
-import { About } from './pages/About';
-import { ContactPage } from './pages/ContactPage';
-import { Footer } from './components/Footer';
+import { ProjectsPageNew } from './pages/ProjectsPageNew';
+import { ProjectDetailNew } from './pages/ProjectDetailNew';
+import { AboutNew } from './pages/AboutNew';
+import { ContactPageNew } from './pages/ContactPageNew';
+import { FooterNew } from './components/FooterNew';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,16 +22,16 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="relative min-h-screen">
-        <Navbar />
+      <div className="relative min-h-screen bg-gray-900">
+        <NavbarNew />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutNew />} />
+          <Route path="/projects" element={<ProjectsPageNew />} />
+          <Route path="/projects/:id" element={<ProjectDetailNew />} />
+          <Route path="/contact" element={<ContactPageNew />} />
         </Routes>
-        <Footer />
+        <FooterNew />
       </div>
     </BrowserRouter>
   );

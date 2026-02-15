@@ -8,7 +8,7 @@ const socialLinks = [
     name: 'Instagram',
     icon: Instagram,
     url: 'https://www.instagram.com/future_.craft',
-    color: 'bg-gradient-to-r from-purple-500 via-pink-500 to-red-500',
+    color: 'bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400',
     hoverEffect: 'hover:scale-105 hover:rotate-6'
   },
   {
