@@ -22,15 +22,17 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="relative min-h-screen bg-gray-900">
+      <div className="relative min-h-screen bg-gray-900 overflow-x-hidden">
         <NavbarNew />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutNew />} />
-          <Route path="/projects" element={<ProjectsPageNew />} />
-          <Route path="/projects/:id" element={<ProjectDetailNew />} />
-          <Route path="/contact" element={<ContactPageNew />} />
-        </Routes>
+        <div className="no-horizontal-scroll">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutNew />} />
+            <Route path="/projects" element={<ProjectsPageNew />} />
+            <Route path="/projects/:id" element={<ProjectDetailNew />} />
+            <Route path="/contact" element={<ContactPageNew />} />
+          </Routes>
+        </div>
         <FooterNew />
       </div>
     </BrowserRouter>
