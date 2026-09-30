@@ -16,14 +16,14 @@ export function FooterNew() {
 
   const footerLinks = {
     services: [
-      { name: 'Sviluppo Web', path: '/projects' },
-      { name: 'UI/UX Design', path: '/projects' },
-      { name: 'Social Media', path: '/projects' },
-      { name: 'Fotografia', path: '/projects' }
+      { name: 'Soluzioni Web', path: '/servizi#web' },
+      { name: 'Social & Marketing', path: '/servizi#social' },
+      { name: 'Consulenza Gratuita', path: '/servizi#preventivo' },
+      { name: 'Richiedi Preventivo', path: '/servizi#preventivo' }
     ],
     company: [
       { name: 'Chi Siamo', path: '/about' },
-      { name: 'Progetti', path: '/projects' },
+      { name: 'Servizi', path: '/servizi' },
       { name: 'Contatti', path: '/contact' }
     ]
   };
@@ -31,7 +31,7 @@ export function FooterNew() {
   const socialLinks = [
     { 
       icon: Instagram, 
-      url: 'https://instagram.com/yourprofile', 
+      url: 'https://www.instagram.com/future_.craft', 
       label: 'Instagram',
       gradient: 'from-cyan-400 to-teal-400'
     },

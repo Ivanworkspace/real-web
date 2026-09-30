@@ -227,7 +227,7 @@ export function ServicesNew() {
             Non trovi il servizio che cerchi?
           </p>
           <motion.a
-            href="/contact"
+            href="/servizi#preventivo"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block bg-gradient-to-r from-cyan-400 to-teal-400 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl shadow-cyan-400/50 hover:shadow-cyan-400/70 transition-all duration-300"

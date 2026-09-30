@@ -121,11 +121,11 @@ export function HeroNew() {
           >
             <Magnetic>
               <Link
-                to="/projects"
+                to="/servizi"
                 className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-400 to-teal-400 text-gray-900 font-bold text-lg rounded-full overflow-hidden shadow-[0_0_40px_-5px_rgba(34,211,238,0.6)]"
               >
                 <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                <span className="relative">Esplora i Progetti</span>
+                <span className="relative">Scopri i Servizi</span>
                 <ArrowRight className="relative w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Magnetic>

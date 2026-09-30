@@ -19,7 +19,7 @@ export function NavbarNew() {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Chi Siamo', path: '/about' },
-    { name: 'Progetti', path: '/projects' },
+    { name: 'Servizi', path: '/servizi' },
     { name: 'Contatti', path: '/contact' }
   ];
 

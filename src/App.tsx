@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { NavbarNew } from './components/NavbarNew';
 import { HomePage } from './pages/HomePage';
-import { ProjectsPageNew } from './pages/ProjectsPageNew';
-import { ProjectDetailNew } from './pages/ProjectDetailNew';
+import { ServicesPage } from './pages/ServicesPage';
 import { AboutNew } from './pages/AboutNew';
 import { ContactPageNew } from './pages/ContactPageNew';
 import { FooterNew } from './components/FooterNew';
@@ -22,8 +21,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutNew />} />
-            <Route path="/projects" element={<ProjectsPageNew />} />
-            <Route path="/projects/:id" element={<ProjectDetailNew />} />
+            <Route path="/servizi" element={<ServicesPage />} />
+            {/* Vecchi link alla pagina progetti */}
+            <Route path="/projects/*" element={<Navigate to="/servizi" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/contact" element={<ContactPageNew />} />
           </Routes>
         </div>
