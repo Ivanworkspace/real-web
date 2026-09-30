@@ -64,27 +64,6 @@ const services = [
   'Consulenza Brand Identity'
 ];
 
-const caseStudies = [
-  {
-    client: 'Masseria Le Cantine',
-    increase: '+150%',
-    metric: 'Fatturato',
-    description: 'Da piccola masseria locale a destinazione ambita dai turisti di tutta la regione'
-  },
-  {
-    client: 'Barber Class',
-    increase: '+130%',
-    metric: 'Prenotazioni',
-    description: 'Fidelizzazione clienti e lista d\'attesa di 2 settimane'
-  },
-  {
-    client: 'Beverhouse',
-    increase: '+110%',
-    metric: 'Vendite',
-    description: 'Crescita costante delle vendite online e foot traffic in store'
-  }
-];
-
 export function SocialMediaSection() {
   return (
     <section className="relative py-16 md:py-32 overflow-x-hidden bg-gradient-to-b from-gray-900 via-cyan-900/10 to-gray-900">
@@ -334,48 +313,9 @@ export function SocialMediaSection() {
                 </p>
               </div>
 
-              {/* Right Side - Case Studies & Highlight */}
+              {/* Right Side - Highlight */}
               <div className="space-y-4 md:space-y-6">
-                {/* Risultati Concreti per Cliente */}
-                <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-2 border-cyan-500/30 rounded-xl md:rounded-2xl p-4 md:p-6">
-                  <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-                    <LineChart className="w-6 h-6 md:w-8 md:h-8 text-cyan-400" />
-                    <h4 className="text-xl md:text-2xl font-bold text-white">
-                      Risultati Reali dei Nostri Clienti
-                    </h4>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    {caseStudies.map((study, index) => (
-                      <motion.div
-                        key={study.client}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.15 }}
-                        className="relative group"
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-teal-400 blur-lg opacity-0 group-hover:opacity-20 transition-opacity" />
-                        <div className="relative bg-gradient-to-br from-cyan-900/20 to-teal-900/20 border border-cyan-500/20 rounded-xl p-4 group-hover:border-cyan-400/50 transition-all">
-                          <div className="flex items-start justify-between mb-2">
-                            <div>
-                              <h5 className="text-white font-bold text-lg">{study.client}</h5>
-                              <p className="text-gray-400 text-sm">{study.description}</p>
-                            </div>
-                            <div className="flex flex-col items-end">
-                              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
-                                {study.increase}
-                              </div>
-                              <div className="text-xs text-gray-400 uppercase">{study.metric}</div>
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                {                /* Focus Fatturato */}
+                {/* Focus Fatturato */}
                 <div className="bg-gradient-to-br from-green-900/40 to-emerald-900/40 border-2 border-green-500/30 rounded-xl md:rounded-2xl p-4 md:p-6">
                   <DollarSign className="w-10 h-10 md:w-12 md:h-12 text-green-400 mb-3 md:mb-4" />
                   <h4 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">

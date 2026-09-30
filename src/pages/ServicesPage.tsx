@@ -97,13 +97,11 @@ const clients = [
 ];
 
 const steps = [
-  { icon: MessageCircle, title: 'Ci contatti', description: 'Scrivici su WhatsApp, via email o dal modulo qui sotto: raccontaci la tua idea.' },
+  { icon: MessageCircle, title: 'Ci contatti', description: 'Scrivici su WhatsApp, via email o su Instagram: raccontaci la tua idea.' },
   { icon: MapPin, title: 'Veniamo da te', description: 'Consulenza gratuita direttamente nella tua attività, per capire davvero le tue esigenze.' },
   { icon: Lightbulb, title: 'Strategia su misura', description: 'Ti presentiamo la soluzione digitale o il piano social pensato solo per te.' },
   { icon: ClipboardCheck, title: 'Preventivo chiaro', description: 'Ricevi un preventivo trasparente, senza impegno e senza sorprese.' },
 ];
-
-const requestTypes = ['Soluzione web / software', 'Social & marketing', 'Entrambi', 'Solo una domanda'];
 
 function scrollToId(id: string) {
   const el = document.getElementById(id);
@@ -119,96 +117,6 @@ function SectionBadge({ icon: Icon, children }: { icon: React.ElementType; child
       <Icon className="w-4 h-4 text-cyan-400" />
       <span className="text-cyan-200 text-sm font-medium tracking-wide uppercase">{children}</span>
     </div>
-  );
-}
-
-function QuoteForm() {
-  const [type, setType] = useState(requestTypes[0]);
-  const [name, setName] = useState('');
-  const [business, setBusiness] = useState('');
-  const [message, setMessage] = useState('');
-
-  const text = [
-    'Ciao Future Craft! 👋',
-    `Vorrei una consulenza gratuita / un preventivo.`,
-    `• Tipo di richiesta: ${type}`,
-    name && `• Nome: ${name}`,
-    business && `• Attività: ${business}`,
-    message && `• Dettagli: ${message}`,
-  ]
-    .filter(Boolean)
-    .join('\n');
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-  };
-
-  const mailHref = `mailto:${EMAIL}?subject=${encodeURIComponent(`Richiesta preventivo - ${type}`)}&body=${encodeURIComponent(text)}`;
-
-  const inputClass =
-    'w-full bg-gray-900/60 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20 transition';
-
-  return (
-    <form onSubmit={submit} className="space-y-5">
-      <div>
-        <span className="block text-sm text-gray-400 mb-2">Di cosa hai bisogno?</span>
-        <div className="flex flex-wrap gap-2">
-          {requestTypes.map((t) => (
-            <button
-              type="button"
-              key={t}
-              onClick={() => setType(t)}
-              className={`px-4 py-2 rounded-full text-sm border transition ${
-                type === t
-                  ? 'bg-gradient-to-r from-cyan-400 to-teal-400 text-gray-900 font-semibold border-transparent'
-                  : 'bg-white/5 text-gray-300 border-white/10 hover:border-cyan-400/40'
-              }`}
-            >
-              {t}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="grid sm:grid-cols-2 gap-4">
-        <label className="block">
-          <span className="block text-sm text-gray-400 mb-2">Nome</span>
-          <input className={inputClass} value={name} onChange={(e) => setName(e.target.value)} placeholder="Il tuo nome" />
-        </label>
-        <label className="block">
-          <span className="block text-sm text-gray-400 mb-2">Attività</span>
-          <input className={inputClass} value={business} onChange={(e) => setBusiness(e.target.value)} placeholder="Es. Ristorante, negozio..." />
-        </label>
-      </div>
-      <label className="block">
-        <span className="block text-sm text-gray-400 mb-2">Raccontaci la tua idea</span>
-        <textarea
-          className={`${inputClass} min-h-[120px] resize-y`}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Es. vorrei un totem per gli ordini nel mio locale, oppure far crescere il mio Instagram..."
-        />
-      </label>
-      <div className="flex flex-col sm:flex-row gap-3 pt-2">
-        <button
-          type="submit"
-          className="group flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-gray-900 bg-gradient-to-r from-green-400 to-emerald-400 shadow-[0_0_30px_-5px_rgba(52,211,153,0.6)] hover:brightness-110 transition"
-        >
-          <MessageCircle className="w-5 h-5" />
-          Invia su WhatsApp
-        </button>
-        <a
-          href={mailHref}
-          className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-white bg-white/5 border border-white/15 hover:bg-white/10 transition"
-        >
-          <Mail className="w-5 h-5" />
-          Invia per email
-        </a>
-      </div>
-      <p className="text-xs text-gray-500 text-center sm:text-left">
-        Il messaggio si apre già compilato: devi solo premere invia. Nessun impegno.
-      </p>
-    </form>
   );
 }
 
@@ -474,16 +382,16 @@ export function ServicesPage() {
           <section id="preventivo" className="scroll-mt-28">
             <div className="relative">
               <div className="absolute -inset-6 bg-gradient-to-r from-cyan-500/20 via-teal-400/10 to-blue-500/20 blur-3xl rounded-[3rem]" />
-              <div className="relative grid lg:grid-cols-5 gap-10 bg-gray-900/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-10 md:p-14">
-                <div className="lg:col-span-2 text-center lg:text-left">
+              <div className="relative bg-gray-900/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-10 md:p-14">
+                <div className="text-center">
                   <SectionBadge icon={Send}>Preventivo gratuito</SectionBadge>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 lg:!text-left">
+                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
                     Parliamo del tuo <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">progetto</span>
                   </h2>
-                  <p className="text-gray-300 text-lg mb-8">
+                  <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
                     Richiedi un preventivo o scrivici per qualunque domanda o curiosità. Ti rispondiamo il prima possibile.
                   </p>
-                  <div className="space-y-3 text-left">
+                  <div className="grid sm:grid-cols-3 gap-4 text-left max-w-4xl mx-auto">
                     <a
                       href={`https://wa.me/${WHATSAPP}`}
                       target="_blank"
@@ -525,9 +433,6 @@ export function ServicesPage() {
                       </div>
                     </a>
                   </div>
-                </div>
-                <div className="lg:col-span-3">
-                  <QuoteForm />
                 </div>
               </div>
             </div>
