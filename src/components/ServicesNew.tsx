@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
+import { SplitReveal } from './fx/SplitReveal';
 import { 
   Code, 
   Palette, 
@@ -79,7 +81,20 @@ function ServiceCard({ service, index }: ServiceCardProps) {
         animate={{ opacity: isHovered ? 0.75 : 0 }}
       />
 
-      {/* Card */}
+      {/* Card con tilt 3D + riflesso */}
+      <Tilt
+        className="h-full rounded-3xl"
+        tiltMaxAngleX={8}
+        tiltMaxAngleY={8}
+        perspective={1000}
+        scale={1.02}
+        transitionSpeed={1500}
+        glareEnable
+        glareMaxOpacity={0.18}
+        glareColor="#a5f3fc"
+        glarePosition="all"
+        glareBorderRadius="1.5rem"
+      >
       <div className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full shadow-2xl overflow-hidden">
         {/* Sfondo decorativo */}
         <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.gradient} blur-3xl opacity-20`} />
@@ -142,6 +157,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
           className={`absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r ${service.gradient} rounded-full blur-2xl`}
         />
       </div>
+      </Tilt>
     </motion.div>
   );
 }
@@ -179,15 +195,13 @@ export function ServicesNew() {
             <span className="text-cyan-300 font-semibold">I Nostri Servizi</span>
           </motion.div>
 
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-white">
-              Soluzioni Complete
-            </span>
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400">
-              Per Il Tuo Successo
-            </span>
-          </h2>
+          <SplitReveal
+            className="text-5xl lg:text-6xl font-bold mb-6"
+            lines={[
+              { text: 'Soluzioni Complete', className: 'text-white' },
+              { text: 'Per Il Tuo Successo', className: 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400' },
+            ]}
+          />
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Offriamo servizi completi per portare il tuo business al livello successivo,
@@ -212,13 +226,14 @@ export function ServicesNew() {
           <p className="text-gray-300 text-lg mb-6">
             Non trovi il servizio che cerchi?
           </p>
-          <motion.button
+          <motion.a
+            href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-cyan-400 to-teal-400 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl shadow-cyan-400/50 hover:shadow-cyan-400/70 transition-all duration-300"
+            className="inline-block bg-gradient-to-r from-cyan-400 to-teal-400 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl shadow-cyan-400/50 hover:shadow-cyan-400/70 transition-all duration-300"
           >
             Parliamone Insieme
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

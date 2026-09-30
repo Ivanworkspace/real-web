@@ -1,7 +1,10 @@
-import React, { Suspense } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float, MeshDistortMaterial, Sphere } from '@react-three/drei';
+import Tilt from 'react-parallax-tilt';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ParticleField } from '../components/three/ParticleField';
+import { SplitReveal } from '../components/fx/SplitReveal';
 import { 
   Award, 
   Users, 
@@ -14,26 +17,95 @@ import {
   Rocket
 } from 'lucide-react';
 
-// Background 3D semplice
-function Background3D() {
+gsap.registerPlugin(ScrollTrigger);
+
+// Testo circolare rotante (come il logo sulla felpa)
+function RotatingBadge() {
+  const text = 'DIGITAL FUTURE STARTS HERE ✦ FUTURE CRAFT ✦ ';
   return (
-    <group>
-      <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.3}>
-        <Sphere args={[0.8, 64, 64]} position={[2, 0, -3]}>
-          <MeshDistortMaterial
-            color="#4fe2e8"
-            attach="material"
-            distort={0.3}
-            speed={1.5}
-            roughness={0.3}
-            opacity={0.6}
-            transparent
+    <div className="relative w-28 h-28 md:w-36 md:h-36">
+      <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full animate-spin-slow">
+        <defs>
+          <path id="badge-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+        </defs>
+        <text className="fill-white font-display" style={{ fontSize: 15.5, fontWeight: 600, letterSpacing: 2.2 }}>
+          <textPath href="#badge-circle">{text}</textPath>
+        </text>
+      </svg>
+      <div className="absolute inset-[30%] rounded-full bg-gradient-to-br from-cyan-400 to-teal-400 shadow-[0_0_30px_rgba(34,211,238,0.6)] flex items-center justify-center">
+        <Sparkles className="w-6 h-6 text-gray-900" />
+      </div>
+    </div>
+  );
+}
+
+// Foto con reveal cinematografico allo scroll + tilt 3D
+function FounderPhoto() {
+  const wrap = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (!wrap.current) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.photo-mask',
+        { clipPath: 'inset(100% 0% 0% 0% round 1.5rem)' },
+        {
+          clipPath: 'inset(0% 0% 0% 0% round 1.5rem)',
+          duration: 1.4,
+          ease: 'expo.inOut',
+          scrollTrigger: { trigger: wrap.current, start: 'top 80%', once: true },
+        }
+      );
+      gsap.fromTo(
+        '.photo-img',
+        { scale: 1.18 },
+        {
+          scale: 1.02,
+          ease: 'none',
+          scrollTrigger: { trigger: wrap.current, start: 'top bottom', end: 'bottom top', scrub: true },
+        }
+      );
+    }, wrap);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={wrap} className="relative">
+      <div className="absolute -inset-4 bg-gradient-to-br from-cyan-400/30 via-teal-400/10 to-transparent blur-3xl rounded-[2rem]" />
+      <Tilt
+        tiltMaxAngleX={6}
+        tiltMaxAngleY={6}
+        perspective={1200}
+        transitionSpeed={2000}
+        glareEnable
+        glareMaxOpacity={0.12}
+        glareColor="#ffffff"
+        glarePosition="all"
+        glareBorderRadius="1.5rem"
+        className="rounded-3xl"
+      >
+        <div className="photo-mask relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl aspect-[3/4] sm:aspect-[4/5] lg:aspect-auto lg:h-[720px]">
+          <img
+            src="/images/ivan-futurecraft.jpg"
+            alt="Ivan Santantonio con la felpa Future Craft - Digital Future Starts Here"
+            loading="lazy"
+            decoding="async"
+            className="photo-img absolute inset-0 w-full h-full object-cover will-change-transform"
+            style={{ objectPosition: '55% 38%' }}
           />
-        </Sphere>
-      </Float>
-      <ambientLight intensity={0.4} />
-      <pointLight position={[5, 5, 5]} intensity={0.8} />
-    </group>
+          {/* Sfumatura in basso per leggere il nome */}
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent" />
+
+          <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:min-w-[280px] bg-gray-900/60 backdrop-blur-xl border border-white/15 rounded-2xl px-5 py-4 md:p-6">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-1 !text-left">Ivan Santantonio</h3>
+            <p className="text-cyan-300 font-semibold text-sm uppercase tracking-widest">Founder & Developer</p>
+          </div>
+        </div>
+      </Tilt>
+      <div className="absolute -top-8 -right-4 md:-right-10 z-10 pointer-events-none">
+        <RotatingBadge />
+      </div>
+    </div>
   );
 }
 
@@ -93,17 +165,10 @@ export function AboutNew() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-cyan-900/20 to-gray-900 relative overflow-hidden">
       {/* Background 3D */}
-      <div className="fixed inset-0 z-0 opacity-20">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-          <Suspense fallback={null}>
-            <Background3D />
-            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.3} />
-          </Suspense>
-        </Canvas>
-      </div>
+      <ParticleField />
 
       {/* Overlay */}
-      <div className="fixed inset-0 bg-gradient-to-b from-gray-900/80 via-transparent to-gray-900/90 z-0" />
+      <div className="fixed inset-0 bg-gradient-to-b from-gray-900/70 via-transparent to-gray-900/90 z-0 pointer-events-none" />
 
       {/* Contenuto */}
       <div className="relative z-10 pt-32 pb-20">
@@ -124,15 +189,16 @@ export function AboutNew() {
               <span className="text-cyan-300 font-semibold">Chi Siamo</span>
             </motion.div>
 
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-white">
-                La Storia di
-              </span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400">
-                Future Craft
-              </span>
-            </h1>
+            <SplitReveal
+              as="h1"
+              onScroll={false}
+              delay={0.2}
+              className="text-5xl lg:text-7xl font-bold mb-6"
+              lines={[
+                { text: 'La Storia di', className: 'text-white' },
+                { text: 'Future Craft', className: 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400' },
+              ]}
+            />
 
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Dove la passione per il codice incontra l'arte del marketing
@@ -163,25 +229,9 @@ export function AboutNew() {
           </div>
 
           {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
             {/* Immagine */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-teal-400 blur-2xl opacity-20 group-hover:opacity-30 transition-opacity" />
-              <img 
-                src="/images/fotoivan.jpeg"
-                alt="Ivan Santantonio - Founder"
-                className="relative w-full h-[600px] object-cover rounded-3xl shadow-2xl border border-white/10"
-              />
-              <div className="absolute bottom-6 left-6 right-6 bg-gradient-to-r from-gray-900/90 to-gray-800/90 backdrop-blur-xl border border-white/20 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Ivan Santantonio</h3>
-                <p className="text-cyan-400 font-semibold">Founder & Developer</p>
-              </div>
-            </motion.div>
+            <FounderPhoto />
 
             {/* Testo */}
             <motion.div

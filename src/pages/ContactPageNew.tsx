@@ -1,7 +1,6 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float, MeshDistortMaterial, Sphere } from '@react-three/drei';
+import { ParticleField } from '../components/three/ParticleField';
 import { 
   Instagram, 
   Linkedin, 
@@ -14,42 +13,6 @@ import {
   Sparkles,
   Facebook
 } from 'lucide-react';
-
-// Background 3D
-function Background3D() {
-  return (
-    <group>
-      <Float speed={2} rotationIntensity={0.4} floatIntensity={0.4}>
-        <Sphere args={[1, 64, 64]} position={[-2, 1, -4]}>
-          <MeshDistortMaterial
-            color="#4fe2e8"
-            attach="material"
-            distort={0.4}
-            speed={2}
-            roughness={0.3}
-            opacity={0.6}
-            transparent
-          />
-        </Sphere>
-      </Float>
-      <Float speed={2.5} rotationIntensity={0.5} floatIntensity={0.5}>
-        <Sphere args={[0.7, 64, 64]} position={[2, -1, -3]}>
-          <MeshDistortMaterial
-            color="#06B6D4"
-            attach="material"
-            distort={0.3}
-            speed={2.5}
-            roughness={0.3}
-            opacity={0.6}
-            transparent
-          />
-        </Sphere>
-      </Float>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
-    </group>
-  );
-}
 
 const socialLinks = [
   {
@@ -115,14 +78,7 @@ export function ContactPageNew() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-cyan-900/20 to-gray-900 relative overflow-hidden">
       {/* Background 3D */}
-      <div className="fixed inset-0 z-0 opacity-30">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-          <Suspense fallback={null}>
-            <Background3D />
-            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-          </Suspense>
-        </Canvas>
-      </div>
+      <ParticleField />
 
       {/* Overlay */}
       <div className="fixed inset-0 bg-gradient-to-b from-gray-900/80 via-transparent to-gray-900/90 z-0" />

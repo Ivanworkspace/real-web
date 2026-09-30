@@ -1,8 +1,7 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float, MeshDistortMaterial, Sphere } from '@react-three/drei';
+import { ParticleField } from '../components/three/ParticleField';
 import { 
   ArrowLeft, 
   Code, 
@@ -17,29 +16,6 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { projectsData } from '../data/projects';
-
-// Background 3D minimale
-function Background3D() {
-  return (
-    <group>
-      <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.3}>
-        <Sphere args={[0.8, 64, 64]} position={[-2, 0, -4]}>
-          <MeshDistortMaterial
-            color="#4fe2e8"
-            attach="material"
-            distort={0.3}
-            speed={1.5}
-            roughness={0.3}
-            opacity={0.6}
-            transparent
-          />
-        </Sphere>
-      </Float>
-      <ambientLight intensity={0.4} />
-      <pointLight position={[5, 5, 5]} intensity={0.8} />
-    </group>
-  );
-}
 
 export function ProjectDetailNew() {
   const { id } = useParams();
@@ -79,14 +55,7 @@ export function ProjectDetailNew() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-cyan-900/20 to-gray-900 relative overflow-hidden">
       {/* Background 3D */}
-      <div className="fixed inset-0 z-0 opacity-30">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-          <Suspense fallback={null}>
-            <Background3D />
-            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.3} />
-          </Suspense>
-        </Canvas>
-      </div>
+      <ParticleField />
 
       {/* Overlay */}
       <div className="fixed inset-0 bg-gradient-to-b from-gray-900/80 via-transparent to-gray-900/90 z-0" />
