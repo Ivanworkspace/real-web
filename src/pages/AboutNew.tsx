@@ -113,7 +113,7 @@ export function AboutNew() {
   const stats = [
     { icon: Users, value: '50+', label: 'Clienti Felici', gradient: 'from-cyan-400 to-teal-400' },
     { icon: Award, value: '100+', label: 'Progetti', gradient: 'from-cyan-500 to-blue-500' },
-    { icon: TrendingUp, value: '+250%', label: 'Crescita Media', gradient: 'from-green-500 to-emerald-500' },
+    { icon: TrendingUp, value: '+120%', label: 'Crescita Media', gradient: 'from-green-500 to-emerald-500' },
     { icon: Rocket, value: '5+', label: 'Anni Esperienza', gradient: 'from-orange-500 to-red-500' },
   ];
 

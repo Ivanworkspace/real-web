@@ -10,7 +10,7 @@ import { Magnetic } from './fx/Magnetic';
 const stats = [
   { value: 50, prefix: '', suffix: '+', label: 'Clienti' },
   { value: 100, prefix: '', suffix: '+', label: 'Progetti' },
-  { value: 250, prefix: '+', suffix: '%', label: 'Crescita Media' },
+  { value: 120, prefix: '+', suffix: '%', label: 'Crescita Media' },
 ];
 
 // Numero che conta da 0 al valore finale

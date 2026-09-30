@@ -31,25 +31,25 @@ const clients = [
 const results = [
   {
     icon: TrendingUp,
-    stat: '+350%',
+    stat: '+140%',
     label: 'Crescita Fatturato Medio',
     color: 'from-green-400 to-emerald-500'
   },
   {
     icon: Users,
-    stat: '+280%',
+    stat: '+180%',
     label: 'Aumento Follower',
     color: 'from-cyan-400 to-teal-400'
   },
   {
     icon: Instagram,
-    stat: '+450%',
+    stat: '+160%',
     label: 'Engagement Rate',
     color: 'from-pink-400 to-rose-500'
   },
   {
     icon: DollarSign,
-    stat: '+200%',
+    stat: '+90%',
     label: 'ROI Campagne',
     color: 'from-yellow-400 to-amber-500'
   }
@@ -67,21 +67,21 @@ const services = [
 const caseStudies = [
   {
     client: 'Masseria Le Cantine',
-    increase: '+420%',
+    increase: '+150%',
     metric: 'Fatturato',
     description: 'Da piccola masseria locale a destinazione ambita dai turisti di tutta la regione'
   },
   {
     client: 'Barber Class',
-    increase: '+380%',
+    increase: '+130%',
     metric: 'Prenotazioni',
     description: 'Fidelizzazione clienti e lista d\'attesa di 2 settimane'
   },
   {
     client: 'Beverhouse',
-    increase: '+290%',
+    increase: '+110%',
     metric: 'Vendite',
-    description: 'Crescita esponenziale delle vendite online e foot traffic in store'
+    description: 'Crescita costante delle vendite online e foot traffic in store'
   }
 ];
 
@@ -292,7 +292,7 @@ export function SocialMediaSection() {
                 <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed">
                   Scopri come possiamo <span className="text-cyan-400 font-bold">aumentare il tuo fatturato</span> attraverso 
                   una strategia social personalizzata, proprio come abbiamo fatto con i nostri clienti che hanno 
-                  raggiunto una <span className="text-green-400 font-bold">crescita media del +350%</span>.
+                  raggiunto una <span className="text-green-400 font-bold">crescita media del +140%</span>.
                 </p>
 
                 <div className="space-y-2 md:space-y-3 mb-6 md:mb-8">
@@ -387,7 +387,7 @@ export function SocialMediaSection() {
                   </p>
                   <div className="mt-6 pt-6 border-t border-white/10">
                     <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-2">
-                      +350%
+                      +140%
                     </div>
                     <div className="text-sm text-gray-400">Crescita Fatturato Media Clienti</div>
                   </div>
@@ -409,7 +409,7 @@ export function SocialMediaSection() {
                       <div className="text-xs text-gray-400">Clienti Soddisfatti</div>
                     </div>
                     <div className="flex-1">
-                      <div className="text-2xl font-bold text-cyan-400">+280%</div>
+                      <div className="text-2xl font-bold text-cyan-400">+180%</div>
                       <div className="text-xs text-gray-400">Crescita Media Follower</div>
                     </div>
                   </div>

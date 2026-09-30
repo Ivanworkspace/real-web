@@ -184,9 +184,7 @@ export function FooterNew() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <div className="text-gray-400 text-sm flex items-center gap-2">
-            <span>© {currentYear} Future Craft. Made with</span>
-            <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
-            <span>in Italy</span>
+            <span>© {currentYear} Future Craft. Tutti i diritti riservati.</span>
           </div>
 
           {/* Social Links */}
@@ -212,8 +210,8 @@ export function FooterNew() {
 
         {/* Extra info */}
         <div className="mt-8 text-center">
-          <p className="text-gray-500 text-xs">
-            P.IVA: IT123456789 • Privacy Policy • Cookie Policy • Terms of Service
+          <p className="text-gray-500 text-xs flex items-center justify-center gap-1.5">
+            Made with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> in Italy
           </p>
         </div>
       </div>
